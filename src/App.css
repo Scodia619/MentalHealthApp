@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  font-family: "Pangolin";
+}
+
+.nav-bar{
+  display: flex;
+  justify-content: space-between;
+  background-color: #cce6ff;
+  height: 8vh;
+  color: #66b5ff
+}
+
+.left-nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%
+}
+
+.right-nav{
+  display: flex;
+  align-items: center;
+  margin-right: 1em
+}
