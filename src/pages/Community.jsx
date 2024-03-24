@@ -5,6 +5,7 @@ import { getCommunityPosts } from '../../api'
 function Community() {
 
     const [communityPosts, setCommunityPosts] = useState([])
+    const [showForm, setFormPost] = useState(false)
 
     useEffect(()=>{
         getCommunityPosts()
@@ -13,13 +14,18 @@ function Community() {
         })
     }, [])
 
+    //Creates React Collapasble Component
+    const showFormFunction = () => {
+        setFormPost(!showForm)
+    }
+
   return (
     <section className='community-page'>
         <div className="buttons">
-            <button>Add Post</button>
+            <button onClick={showFormFunction}>Add Post</button>
             <button>Topics</button>
         </div>
-        <AddPost />
+        {showForm ? <AddPost /> : <></>}
         {communityPosts.map((post)=>{
             return <li key={post.post_id}>{post.post_id}</li>
         })}
